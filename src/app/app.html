@@ -10,7 +10,12 @@
 
 </div>
 
-<app-media-control *ngIf="currentSong" [currentSong]="currentSong"></app-media-control>
+<app-media-control
+  *ngIf="currentSong"
+  [currentSong]="currentSong"
+  [playlist]="playlist"
+  (currentSongChange)="currentSong = $event">
+</app-media-control>
 
 
 <router-outlet></router-outlet>

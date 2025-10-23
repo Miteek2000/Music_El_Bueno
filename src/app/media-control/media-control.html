@@ -1,7 +1,13 @@
-<audio controls></audio>
-<input type="range" id="control-bar">
-<div class="player-buttons">
-  <span class="back"><i class="fa-solid fa-backward-step"></i></span>
-  <span class="play"><i class="fa-solid fa-play"></i></span>
-  <span class="next"><i class="fa-solid fa-forward-step"></i></span>
+<div class="media-bar">
+  <audio #audioRef (timeupdate)="onTimeUpdate()" (ended)="onEnded()"></audio>
+  <div class="controls">
+    <button class="btn" aria-label="Anterior" (click)="prev()"><i class="fa-solid fa-backward-step"></i></button>
+    <button class="btn" aria-label="Reproducir/Pausar" (click)="playPause()">
+      <i class="fa-solid" [class.fa-play]="!isPlaying" [class.fa-pause]="isPlaying"></i>
+    </button>
+    <button class="btn" aria-label="Siguiente" (click)="next()"><i class="fa-solid fa-forward-step"></i></button>
+  </div>
+  <div class="progress">
+    <input type="range" id="control-bar" min="0" max="100" [value]="progress" (input)="onSeek($event)">
+  </div>
 </div>

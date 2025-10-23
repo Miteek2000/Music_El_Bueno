@@ -1,8 +1,6 @@
-<p>resultados-busqueda works!</p>
+<h2 *ngIf="query">Resultados para "{{ query }}"</h2>
+<p *ngIf="query && resultados.length === 0">Sin resultados.</p>
 
-
-
-<ul>
-  <li *ngFor="let resultado of resultados">
-    {{ resultado }}
-  </li>
+<div class="content">
+  <app-info-song *ngFor="let song of resultados" [song]="song" displayMode="card"></app-info-song>
+</div>

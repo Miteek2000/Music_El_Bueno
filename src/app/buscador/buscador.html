@@ -1,8 +1,14 @@
-<p>buscador works!</p>
-
-<label for="buscador">Buscador</label>
-
-
-<a routerLink="/resultados-busqueda">
-    <input type="text" [(ngModel)]="searchTerm" id="buscador" name="buscador" />
-</a>
+<label for="buscador">Buscar</label>
+<div class="buscador">
+    <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        id="buscador"
+        name="buscador"
+        placeholder="Artista, canción..."
+        (keyup.enter)="goSearch()"
+    />
+    <button type="button" (click)="goSearch()">Buscar</button>
+    <a routerLink="/resultados-busqueda" [queryParams]="{ q: searchTerm }" style="display:none">legacy</a>
+    <!-- el anchor queda oculto sólo como fallback, la navegación la hace goSearch() -->
+</div>

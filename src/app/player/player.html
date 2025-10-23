@@ -1,5 +1,9 @@
-<div id="main">
-  <app-info-song [song]="song" displayMode="main"></app-info-song>
-  <app-playlist [playlist]="playlist"></app-playlist>
+<div class="player-layout">
+  <section class="now-playing">
+    <app-info-song [song]="song" displayMode="main"></app-info-song>
+  </section>
+  <aside class="queue-panel">
+    <app-playlist [playlist]="playlist"></app-playlist>
+  </aside>
 </div>
 

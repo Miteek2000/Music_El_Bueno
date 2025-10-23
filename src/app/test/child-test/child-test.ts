@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-child-test',
   standalone: false,
   templateUrl: './child-test.html',
-  styleUrl: './child-test.css'
+  styleUrls: ['./child-test.css']
 })
 export class ChildTest {
 

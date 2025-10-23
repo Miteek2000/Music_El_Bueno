@@ -12,4 +12,11 @@ export interface SpotifyTrackResponse {
     duration_ms: number,
     track_number: number,
     preview_url: string,
+    album?: {
+        images?: Array<{
+            url: string;
+            height?: number;
+            width?: number;
+        }>
+    }
 }
